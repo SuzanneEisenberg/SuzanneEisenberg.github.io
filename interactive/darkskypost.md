@@ -6,5 +6,5 @@ tags: [blogging]
 ---
 {: file='hello.sh'}
 
-This map was created using Python (specifically the Folium Python library) with inserted HTML for the legend and fonts. It shows the location of every Dark Sky Chapter and Emerging Advocacy Comittie as listed on the website, along with the contact and website (if avaible). The website links are clickable and open in a new tab.
-<iframe src="https://suzanneeisenberg.github.io/darkskymapinteractivefinal.html" width="100%" height="500px"></iframe>
+This map was created using Python (specifically the Folium Python library) with inserted HTML for the legend and fonts. It shows the location of every Dark Sky Chapter and Emerging Advocate Communities as listed on the website, along with the contact and website (if avalible). The website links are clickable and open in a new tab.
+<iframe src="https://suzanneeisenberg.github.io/darkskymapinteractivefinal.html" width="100%" height="800px"></iframe>
