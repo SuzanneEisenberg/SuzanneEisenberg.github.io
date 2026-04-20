@@ -1,0 +1,3833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+<style>
+    .leaflet-popup-content-wrapper {
+        font-family: "Verdana", sans-serif;
+        font-size: 1.1em;width: max-content;
+    }
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d2f989374a6d91cf2f40945463931400 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    bottom: 50px; left: 50px; width: 180px; height: 160px; 
+    background-color: white; border:2px solid grey; z-index:9999; 
+    font-size:14px; padding: 10px; opacity: 0.8;
+    ">
+    <b>Legend</b><br>
+    <i class="fa fa-map-marker" style="color:#5b396b"></i>&nbsp; Chapters <br>
+    <i class="fa fa-map-marker" style="color:#d252b9"></i>&nbsp; Emerging Advocate Communities <br> <br>
+    <em> Click each site to learn more! </em>
+</div>
+    
+<div style="
+    background-color: white; border:2px solid grey; opacity: 0.8; height:30px; padding: 4px;
+    ">
+    <h3 align="center" style="font-size:16px"><b>Find a DarkSky Chapter Near You! </b></h3>
+</div>
+             
+    
+            <div class="folium-map" id="map_d2f989374a6d91cf2f40945463931400" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d2f989374a6d91cf2f40945463931400 = L.map(
+                "map_d2f989374a6d91cf2f40945463931400",
+                {
+                    center: [46.0, 2.2],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-90,
+-180,
+],
+[
+90,
+180,
+],
+],
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_58e6a0eeaa963e0295c492a019325593 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 2.25,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_58e6a0eeaa963e0295c492a019325593.addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var marker_3b4c499de61e96c3baed8f8312844f95 = L.marker(
+                [-0.023559, 37.906193],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_af854fcdbf41aec082b3eb7fc81d73da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_239d8c6e9596b4c3d1ed4b607a4aff6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cb6c6508dfc3101eea15fcd0bbda5c1 = $(`<div id="html_1cb6c6508dfc3101eea15fcd0bbda5c1" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> kenyachapter [at] darksky [dot] org</div>`)[0];
+                popup_239d8c6e9596b4c3d1ed4b607a4aff6e.setContent(html_1cb6c6508dfc3101eea15fcd0bbda5c1);
+            
+        
+
+        marker_3b4c499de61e96c3baed8f8312844f95.bindPopup(popup_239d8c6e9596b4c3d1ed4b607a4aff6e)
+        ;
+
+        
+    
+    
+            marker_3b4c499de61e96c3baed8f8312844f95.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Kenya 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3b4c499de61e96c3baed8f8312844f95.setIcon(icon_af854fcdbf41aec082b3eb7fc81d73da);
+            
+    
+            var marker_cdbd3704b6f79b48fe4bcf576b606ab4 = L.marker(
+                [39.9075, 116.39723],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_05e326ad4ed9f7b8d4f5e9f6a19a3ef0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e96d6f9f0e55425b70e26d847453d053 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3017bb61726d2b01f2e3a7b85bd625a4 = $(`<div id="html_3017bb61726d2b01f2e3a7b85bd625a4" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://www.darksky.cn/ target=_blank>http://www.darksky.cn/</a> <br> <strong>Contact:</strong> <br> starrrryl [at] gmail [dot] com</div>`)[0];
+                popup_e96d6f9f0e55425b70e26d847453d053.setContent(html_3017bb61726d2b01f2e3a7b85bd625a4);
+            
+        
+
+        marker_cdbd3704b6f79b48fe4bcf576b606ab4.bindPopup(popup_e96d6f9f0e55425b70e26d847453d053)
+        ;
+
+        
+    
+    
+            marker_cdbd3704b6f79b48fe4bcf576b606ab4.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Beijing
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cdbd3704b6f79b48fe4bcf576b606ab4.setIcon(icon_05e326ad4ed9f7b8d4f5e9f6a19a3ef0);
+            
+    
+            var marker_adea810f5a502ce14c1a0826a935bf75 = L.marker(
+                [22.396428, 114.109497],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_0369ce13b3a9268c91906a0848b5e4b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ee92388dba9f57717c7b49289752a74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f4d5cf74da59a2a6240330a81d2a62a = $(`<div id="html_1f4d5cf74da59a2a6240330a81d2a62a" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> sitexodus [at] gmail [dot] com</div>`)[0];
+                popup_5ee92388dba9f57717c7b49289752a74.setContent(html_1f4d5cf74da59a2a6240330a81d2a62a);
+            
+        
+
+        marker_adea810f5a502ce14c1a0826a935bf75.bindPopup(popup_5ee92388dba9f57717c7b49289752a74)
+        ;
+
+        
+    
+    
+            marker_adea810f5a502ce14c1a0826a935bf75.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Hong Kong
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_adea810f5a502ce14c1a0826a935bf75.setIcon(icon_0369ce13b3a9268c91906a0848b5e4b7);
+            
+    
+            var marker_da179f9d0afdf5d5f7b71b6654ace2be = L.marker(
+                [36.204824, 138.252924],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_a58d2baedd19e409cbdf0eba2d724b9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f17d66cc7a7a078761200d05c4c95c97 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e9c102ffc894db6dade99831a0f0125 = $(`<div id="html_6e9c102ffc894db6dade99831a0f0125" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darksky.jp target=_blank>darksky.jp</a> <br> <strong>Contact:</strong> <br> ochi [at] idatokyo [dot] org</div>`)[0];
+                popup_f17d66cc7a7a078761200d05c4c95c97.setContent(html_6e9c102ffc894db6dade99831a0f0125);
+            
+        
+
+        marker_da179f9d0afdf5d5f7b71b6654ace2be.bindPopup(popup_f17d66cc7a7a078761200d05c4c95c97)
+        ;
+
+        
+    
+    
+            marker_da179f9d0afdf5d5f7b71b6654ace2be.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Japan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da179f9d0afdf5d5f7b71b6654ace2be.setIcon(icon_a58d2baedd19e409cbdf0eba2d724b9f);
+            
+    
+            var marker_f4405b6e1e1bcbeff9d52ca334c97821 = L.marker(
+                [28.394857, 84.124008],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_4274e27d08a619b40ba13199126d6b86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5edfe9019024e5ae1d8b8b15b3f193c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88db10a36177649354baa373001bbb8d = $(`<div id="html_88db10a36177649354baa373001bbb8d" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.nepalastronomicalsociety.org/ target=_blank>https://www.nepalastronomicalsociety.org/</a> <br> <strong>Contact:</strong> <br> suresh [at] nepalastronomcialsociety [dot] org</div>`)[0];
+                popup_d5edfe9019024e5ae1d8b8b15b3f193c.setContent(html_88db10a36177649354baa373001bbb8d);
+            
+        
+
+        marker_f4405b6e1e1bcbeff9d52ca334c97821.bindPopup(popup_d5edfe9019024e5ae1d8b8b15b3f193c)
+        ;
+
+        
+    
+    
+            marker_f4405b6e1e1bcbeff9d52ca334c97821.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Nepal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4405b6e1e1bcbeff9d52ca334c97821.setIcon(icon_4274e27d08a619b40ba13199126d6b86);
+            
+    
+            var marker_a3a538869f1f084e811e7396e5983a43 = L.marker(
+                [30.375321, 69.345116],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_97753e79f7183f4f1d84c5ce08b9d0ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f3a9606cccf481c7d553aae889624b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b03d2c2d08268d4b8053567f445c1f01 = $(`<div id="html_b03d2c2d08268d4b8053567f445c1f01" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> rayanstagram [at] gmail [dot] com</div>`)[0];
+                popup_7f3a9606cccf481c7d553aae889624b1.setContent(html_b03d2c2d08268d4b8053567f445c1f01);
+            
+        
+
+        marker_a3a538869f1f084e811e7396e5983a43.bindPopup(popup_7f3a9606cccf481c7d553aae889624b1)
+        ;
+
+        
+    
+    
+            marker_a3a538869f1f084e811e7396e5983a43.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Pakistan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3a538869f1f084e811e7396e5983a43.setIcon(icon_97753e79f7183f4f1d84c5ce08b9d0ba);
+            
+    
+            var marker_635b13f7683ea82942a1e7e516d786e4 = L.marker(
+                [31.22222, 121.45806],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_31e9a01437d8a63197865e8539b003af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8cd0d593f538516d156bbea57b8a79e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6dfef78f36f6d3b80dd8182aeec24f45 = $(`<div id="html_6dfef78f36f6d3b80dd8182aeec24f45" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> guofei [at] hotmail [dot] com</div>`)[0];
+                popup_d8cd0d593f538516d156bbea57b8a79e.setContent(html_6dfef78f36f6d3b80dd8182aeec24f45);
+            
+        
+
+        marker_635b13f7683ea82942a1e7e516d786e4.bindPopup(popup_d8cd0d593f538516d156bbea57b8a79e)
+        ;
+
+        
+    
+    
+            marker_635b13f7683ea82942a1e7e516d786e4.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Shanghai
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_635b13f7683ea82942a1e7e516d786e4.setIcon(icon_31e9a01437d8a63197865e8539b003af);
+            
+    
+            var marker_e163e311fbe21f8dc6da7116cadfbf09 = L.marker(
+                [23.69781, 120.960515],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_478bf3ce6d8b3e8660670f3733a5aa05 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66ad6288f5b2b5843b488d6b5868f552 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_028b3456487bcb84febf02b93c77b1ad = $(`<div id="html_028b3456487bcb84febf02b93c77b1ad" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darksky.tw/ target=_blank>https://darksky.tw/</a> <br> <strong>Contact:</strong> <br> axiou.tda [at] gmail [dot] com</div>`)[0];
+                popup_66ad6288f5b2b5843b488d6b5868f552.setContent(html_028b3456487bcb84febf02b93c77b1ad);
+            
+        
+
+        marker_e163e311fbe21f8dc6da7116cadfbf09.bindPopup(popup_66ad6288f5b2b5843b488d6b5868f552)
+        ;
+
+        
+    
+    
+            marker_e163e311fbe21f8dc6da7116cadfbf09.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Taiwan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e163e311fbe21f8dc6da7116cadfbf09.setIcon(icon_478bf3ce6d8b3e8660670f3733a5aa05);
+            
+    
+            var marker_dae3bb7a29997294fc586891e24964ea = L.marker(
+                [50.503887, 4.469936],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_bb9ee21453657f68023654b2b6f5971b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5cbbe4e6d1d085d379abe329ce7747f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93395fb3f4b44024f78995b94c86cbff = $(`<div id="html_93395fb3f4b44024f78995b94c86cbff" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=levendenacht.be target=_blank>levendenacht.be</a> <br> <strong>Contact:</strong> <br> enquiries [at] livingnight [dot] org</div>`)[0];
+                popup_a5cbbe4e6d1d085d379abe329ce7747f.setContent(html_93395fb3f4b44024f78995b94c86cbff);
+            
+        
+
+        marker_dae3bb7a29997294fc586891e24964ea.bindPopup(popup_a5cbbe4e6d1d085d379abe329ce7747f)
+        ;
+
+        
+    
+    
+            marker_dae3bb7a29997294fc586891e24964ea.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Belgium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dae3bb7a29997294fc586891e24964ea.setIcon(icon_bb9ee21453657f68023654b2b6f5971b);
+            
+    
+            var marker_0d4006ddafecb6b8f1a3a6c824f9e27f = L.marker(
+                [35.126413, 33.429859],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_df80ec7d90dfe4370df6597e302055f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1094be09e0540aa25d7cc17096d171ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff1839b7df54297d6e536ff511b31cb7 = $(`<div id="html_ff1839b7df54297d6e536ff511b31cb7" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://cyprusastronomy.org/index.php/27-posts/40-ida-cyprus-chapter target=_blank>http://cyprusastronomy.org/index.php/27-posts/40-ida-cyprus-chapter</a> <br> <strong>Contact:</strong> <br> demetra.chasikou [at] gmail [dot] com</div>`)[0];
+                popup_1094be09e0540aa25d7cc17096d171ff.setContent(html_ff1839b7df54297d6e536ff511b31cb7);
+            
+        
+
+        marker_0d4006ddafecb6b8f1a3a6c824f9e27f.bindPopup(popup_1094be09e0540aa25d7cc17096d171ff)
+        ;
+
+        
+    
+    
+            marker_0d4006ddafecb6b8f1a3a6c824f9e27f.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Cyprus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d4006ddafecb6b8f1a3a6c824f9e27f.setIcon(icon_df80ec7d90dfe4370df6597e302055f4);
+            
+    
+            var marker_d8e002b899f69b5b1ec2e55461ab464c = L.marker(
+                [46.227638, 2.213749],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_83161452883a4c4cf0ac47fb3b597584 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c1ac420f65a8a10915cfb79212b64c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f6779f45a8634f4873db4097516b397 = $(`<div id="html_4f6779f45a8634f4873db4097516b397" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskyfrance.org/ target=_blank>http://darkskyfrance.org/</a></div>`)[0];
+                popup_2c1ac420f65a8a10915cfb79212b64c2.setContent(html_4f6779f45a8634f4873db4097516b397);
+            
+        
+
+        marker_d8e002b899f69b5b1ec2e55461ab464c.bindPopup(popup_2c1ac420f65a8a10915cfb79212b64c2)
+        ;
+
+        
+    
+    
+            marker_d8e002b899f69b5b1ec2e55461ab464c.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     France
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d8e002b899f69b5b1ec2e55461ab464c.setIcon(icon_83161452883a4c4cf0ac47fb3b597584);
+            
+    
+            var marker_5263c42f92d1dba3c8e36ce0ee92a37e = L.marker(
+                [51.165691, 10.451526],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_29d89bf335df6f544b1dae1907699687 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cf01c4d6883bd5618b45e3ac95a9e82e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a090863769e6fbce932da0e6d8ca26a8 = $(`<div id="html_a090863769e6fbce932da0e6d8ca26a8" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> info [at] lichtverschmutzung [dot] de</div>`)[0];
+                popup_cf01c4d6883bd5618b45e3ac95a9e82e.setContent(html_a090863769e6fbce932da0e6d8ca26a8);
+            
+        
+
+        marker_5263c42f92d1dba3c8e36ce0ee92a37e.bindPopup(popup_cf01c4d6883bd5618b45e3ac95a9e82e)
+        ;
+
+        
+    
+    
+            marker_5263c42f92d1dba3c8e36ce0ee92a37e.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Germany
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5263c42f92d1dba3c8e36ce0ee92a37e.setIcon(icon_29d89bf335df6f544b1dae1907699687);
+            
+    
+            var marker_8e5d4138712357c93147bf819aaa88db = L.marker(
+                [39.074208, 21.824312],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_1c8eae217133cf3e869bd56856d882b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_772b79641330f3844db937e023a0776e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6fbfb0221e60c21985d0670652373203 = $(`<div id="html_6fbfb0221e60c21985d0670652373203" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darksky.gr/ target=_blank>https://darksky.gr/</a> <br> <strong>Contact:</strong> <br> coordinator [at] darksky [dot] gr</div>`)[0];
+                popup_772b79641330f3844db937e023a0776e.setContent(html_6fbfb0221e60c21985d0670652373203);
+            
+        
+
+        marker_8e5d4138712357c93147bf819aaa88db.bindPopup(popup_772b79641330f3844db937e023a0776e)
+        ;
+
+        
+    
+    
+            marker_8e5d4138712357c93147bf819aaa88db.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Greece
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e5d4138712357c93147bf819aaa88db.setIcon(icon_1c8eae217133cf3e869bd56856d882b5);
+            
+    
+            var marker_87df0510e1c612d8748071e946c227c2 = L.marker(
+                [53.41291, -8.24389],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_4b20ce57572142cc934fb6327e55beb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_119cbb186f7e44901d5eafe73f454f1c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6408c257b21b0804a63dd2026ff8098 = $(`<div id="html_e6408c257b21b0804a63dd2026ff8098" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darksky.ie target=_blank>darksky.ie</a> <br> <strong>Contact:</strong> <br> info [at] darksky [dot] ie</div>`)[0];
+                popup_119cbb186f7e44901d5eafe73f454f1c.setContent(html_e6408c257b21b0804a63dd2026ff8098);
+            
+        
+
+        marker_87df0510e1c612d8748071e946c227c2.bindPopup(popup_119cbb186f7e44901d5eafe73f454f1c)
+        ;
+
+        
+    
+    
+            marker_87df0510e1c612d8748071e946c227c2.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Ireland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87df0510e1c612d8748071e946c227c2.setIcon(icon_4b20ce57572142cc934fb6327e55beb9);
+            
+    
+            var marker_e3c9bf8db42f51e0e7f93b499369907f = L.marker(
+                [53.802132, -9.514347],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_085b942bb4dfb7e92cfaf624c7b96ec2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3274b8b9b70d3c46fce4d2c0bb0ee3d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2355e7b6e9df6dd2432cd483f1519f41 = $(`<div id="html_2355e7b6e9df6dd2432cd483f1519f41" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> mayodarkskies [at] gmail [dot] com</div>`)[0];
+                popup_3274b8b9b70d3c46fce4d2c0bb0ee3d5.setContent(html_2355e7b6e9df6dd2432cd483f1519f41);
+            
+        
+
+        marker_e3c9bf8db42f51e0e7f93b499369907f.bindPopup(popup_3274b8b9b70d3c46fce4d2c0bb0ee3d5)
+        ;
+
+        
+    
+    
+            marker_e3c9bf8db42f51e0e7f93b499369907f.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     (Mayo) Ireland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e3c9bf8db42f51e0e7f93b499369907f.setIcon(icon_085b942bb4dfb7e92cfaf624c7b96ec2);
+            
+    
+            var marker_9643b7e499cd7e3f5bc6d833d4664f97 = L.marker(
+                [46.818188, 8.227512],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_deb0dd3723d940a3d9683ca9ed79c39e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42e75dd4854e6a7e6f12fee1e99c55cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c51ebd752530468db7119afe6245657 = $(`<div id="html_5c51ebd752530468db7119afe6245657" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darksky.ch target=_blank>darksky.ch</a> <br> <strong>Contact:</strong> <br> office [at] darksky [dot] ch</div>`)[0];
+                popup_42e75dd4854e6a7e6f12fee1e99c55cb.setContent(html_5c51ebd752530468db7119afe6245657);
+            
+        
+
+        marker_9643b7e499cd7e3f5bc6d833d4664f97.bindPopup(popup_42e75dd4854e6a7e6f12fee1e99c55cb)
+        ;
+
+        
+    
+    
+            marker_9643b7e499cd7e3f5bc6d833d4664f97.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Switzerland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9643b7e499cd7e3f5bc6d833d4664f97.setIcon(icon_deb0dd3723d940a3d9683ca9ed79c39e);
+            
+    
+            var marker_39fa62c8de8d3fb7c83cd32ca6c105ff = L.marker(
+                [41.87194, 12.56738],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_29f84e867c041a2aed4b310d615a043f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54fda909fcfe51b52669def76ad4ddf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4534f7ef7e66b2a1f13784634b9964ee = $(`<div id="html_4534f7ef7e66b2a1f13784634b9964ee" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> mario.disora [at] himail [dot] biz</div>`)[0];
+                popup_54fda909fcfe51b52669def76ad4ddf9.setContent(html_4534f7ef7e66b2a1f13784634b9964ee);
+            
+        
+
+        marker_39fa62c8de8d3fb7c83cd32ca6c105ff.bindPopup(popup_54fda909fcfe51b52669def76ad4ddf9)
+        ;
+
+        
+    
+    
+            marker_39fa62c8de8d3fb7c83cd32ca6c105ff.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Italy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39fa62c8de8d3fb7c83cd32ca6c105ff.setIcon(icon_29f84e867c041a2aed4b310d615a043f);
+            
+    
+            var marker_2279555f8c025729599a3dc221a88c22 = L.marker(
+                [31.046051, 34.851612],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_5bdb414f8e226165187fa1cb511e072a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4cca0b2db2349557d003255ca4658e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b3865717118c3115550f6fd190d4c1a = $(`<div id="html_6b3865717118c3115550f6fd190d4c1a" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://bareket-astro.com/?view=article&id=473&catid=76#projects target=_blank>https://bareket-astro.com/?view=article&id=473&catid=76#projects</a></div>`)[0];
+                popup_f4cca0b2db2349557d003255ca4658e9.setContent(html_6b3865717118c3115550f6fd190d4c1a);
+            
+        
+
+        marker_2279555f8c025729599a3dc221a88c22.bindPopup(popup_f4cca0b2db2349557d003255ca4658e9)
+        ;
+
+        
+    
+    
+            marker_2279555f8c025729599a3dc221a88c22.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Israel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2279555f8c025729599a3dc221a88c22.setIcon(icon_5bdb414f8e226165187fa1cb511e072a);
+            
+    
+            var marker_33174d46f407cab221348727a2d0ed79 = L.marker(
+                [55.378051, -3.435973],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_d9e54471fcc66ee3bf7d0e0740620c7e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c39a7bbd2641bca5274c328bcf17c53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfa59fe0ddfb605e699de0282758e73e = $(`<div id="html_dfa59fe0ddfb605e699de0282758e73e" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darksky.uk target=_blank>darksky.uk</a> <br> <strong>Contact:</strong> <br> hello [at] darksky [dot] uk</div>`)[0];
+                popup_0c39a7bbd2641bca5274c328bcf17c53.setContent(html_dfa59fe0ddfb605e699de0282758e73e);
+            
+        
+
+        marker_33174d46f407cab221348727a2d0ed79.bindPopup(popup_0c39a7bbd2641bca5274c328bcf17c53)
+        ;
+
+        
+    
+    
+            marker_33174d46f407cab221348727a2d0ed79.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     UK
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33174d46f407cab221348727a2d0ed79.setIcon(icon_d9e54471fcc66ee3bf7d0e0740620c7e);
+            
+    
+            var marker_75065fc1c5297fb4aea3dc8ee565b4ce = L.marker(
+                [23.634501, -102.552784],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c1cdc30998be77801e4d7aac6f442b8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f33b95ac12550099c8b86ca78bef50df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73a618a695ae6c2a13db192246c8ca62 = $(`<div id="html_73a618a695ae6c2a13db192246c8ca62" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> favilac [at] astro [dot] unam [dot] mx</div>`)[0];
+                popup_f33b95ac12550099c8b86ca78bef50df.setContent(html_73a618a695ae6c2a13db192246c8ca62);
+            
+        
+
+        marker_75065fc1c5297fb4aea3dc8ee565b4ce.bindPopup(popup_f33b95ac12550099c8b86ca78bef50df)
+        ;
+
+        
+    
+    
+            marker_75065fc1c5297fb4aea3dc8ee565b4ce.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     México
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75065fc1c5297fb4aea3dc8ee565b4ce.setIcon(icon_c1cdc30998be77801e4d7aac6f442b8e);
+            
+    
+            var marker_e73f6b585fe7fc03ab265b0ab75f1135 = L.marker(
+                [46.81228, -71.21454],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c2dae80a89762a779840bb751d842d02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32b04b90c7ab4865961e1d70e29ab035 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_941fa0f033714c60a58a775e709b2243 = $(`<div id="html_941fa0f033714c60a58a775e709b2243" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.darkskyquebec.org target=_blank>https://www.darkskyquebec.org</a> <br> <strong>Contact:</strong> <br> idaquebec [at] hotmail [dot] ca</div>`)[0];
+                popup_32b04b90c7ab4865961e1d70e29ab035.setContent(html_941fa0f033714c60a58a775e709b2243);
+            
+        
+
+        marker_e73f6b585fe7fc03ab265b0ab75f1135.bindPopup(popup_32b04b90c7ab4865961e1d70e29ab035)
+        ;
+
+        
+    
+    
+            marker_e73f6b585fe7fc03ab265b0ab75f1135.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Quebec
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e73f6b585fe7fc03ab265b0ab75f1135.setIcon(icon_c2dae80a89762a779840bb751d842d02);
+            
+    
+            var marker_eac43eef2a7c669e3a9800ef5cf7b86c = L.marker(
+                [32.22174, -110.92648],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_973d46f6280ef3649933359215040559 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f30c9fdb49c7cb5a9c15acbf9b8cc86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_307e91cc298a5615e175fe9bf2392620 = $(`<div id="html_307e91cc298a5615e175fe9bf2392620" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darkskysoaz.org target=_blank>darkskysoaz.org</a> <br> <strong>Contact:</strong> <br> soazchair [at] darksky [dot] org</div>`)[0];
+                popup_4f30c9fdb49c7cb5a9c15acbf9b8cc86.setContent(html_307e91cc298a5615e175fe9bf2392620);
+            
+        
+
+        marker_eac43eef2a7c669e3a9800ef5cf7b86c.bindPopup(popup_4f30c9fdb49c7cb5a9c15acbf9b8cc86)
+        ;
+
+        
+    
+    
+            marker_eac43eef2a7c669e3a9800ef5cf7b86c.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Southern Arizona
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eac43eef2a7c669e3a9800ef5cf7b86c.setIcon(icon_973d46f6280ef3649933359215040559);
+            
+    
+            var marker_2391018713b976cfc8a53c93a59dffc6 = L.marker(
+                [34.753056, -112.021944],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_54eb7a890bedb6f9b3ae08f4020d56db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4257782541f43ea00dab36614cd9cb32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8342188c16cefe788ee9730935c37c1 = $(`<div id="html_d8342188c16cefe788ee9730935c37c1" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> dave [at] lu-az [dot] com</div>`)[0];
+                popup_4257782541f43ea00dab36614cd9cb32.setContent(html_d8342188c16cefe788ee9730935c37c1);
+            
+        
+
+        marker_2391018713b976cfc8a53c93a59dffc6.bindPopup(popup_4257782541f43ea00dab36614cd9cb32)
+        ;
+
+        
+    
+    
+            marker_2391018713b976cfc8a53c93a59dffc6.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Verde Valley
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2391018713b976cfc8a53c93a59dffc6.setIcon(icon_54eb7a890bedb6f9b3ae08f4020d56db);
+            
+    
+            var marker_951973d61d1b758b4183668f55acbcd3 = L.marker(
+                [34.799999, -92.199997],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_461f7f7bf1e2a1e363753ac2da5d661a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c40cf4697d29324453062b16d8c6e3f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d32d699806eb154487598f392773b84 = $(`<div id="html_7d32d699806eb154487598f392773b84" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskyarkansas.org/ target=_blank>https://darkskyarkansas.org/</a> <br> <strong>Contact:</strong> <br> bruce.mcmath [at] gmail [dot] com</div>`)[0];
+                popup_c40cf4697d29324453062b16d8c6e3f9.setContent(html_7d32d699806eb154487598f392773b84);
+            
+        
+
+        marker_951973d61d1b758b4183668f55acbcd3.bindPopup(popup_c40cf4697d29324453062b16d8c6e3f9)
+        ;
+
+        
+    
+    
+            marker_951973d61d1b758b4183668f55acbcd3.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Arkansas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_951973d61d1b758b4183668f55acbcd3.setIcon(icon_461f7f7bf1e2a1e363753ac2da5d661a);
+            
+    
+            var marker_7e1baaf1bc2156a1aab416ed0dbee0c9 = L.marker(
+                [32.31823, -86.902298],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_6bf2099f9746e830ff7de74599d9e91c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa70301291f8a6e98d45acb28449f708 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_420ba3832a0a3b3d037a8055a167ba1a = $(`<div id="html_420ba3832a0a3b3d037a8055a167ba1a" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://starryskiessouth.org target=_blank>https://starryskiessouth.org</a> <br> <strong>Contact:</strong> <br> info [at] starryskiessouth [dot] org</div>`)[0];
+                popup_fa70301291f8a6e98d45acb28449f708.setContent(html_420ba3832a0a3b3d037a8055a167ba1a);
+            
+        
+
+        marker_7e1baaf1bc2156a1aab416ed0dbee0c9.bindPopup(popup_fa70301291f8a6e98d45acb28449f708)
+        ;
+
+        
+    
+    
+            marker_7e1baaf1bc2156a1aab416ed0dbee0c9.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Alabama
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e1baaf1bc2156a1aab416ed0dbee0c9.setIcon(icon_6bf2099f9746e830ff7de74599d9e91c);
+            
+    
+            var marker_c220385c49cb4a5c1d11b5e02883152d = L.marker(
+                [34.134722, -116.311667],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_3647e15aa44d003b4334fa377281e38d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b816e08810ec29debb26228056eb1580 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_378a9a8f140dc7e2dd2a280851af2136 = $(`<div id="html_378a9a8f140dc7e2dd2a280851af2136" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> scdvainfo [at] gmail [dot] com</div>`)[0];
+                popup_b816e08810ec29debb26228056eb1580.setContent(html_378a9a8f140dc7e2dd2a280851af2136);
+            
+        
+
+        marker_c220385c49cb4a5c1d11b5e02883152d.bindPopup(popup_b816e08810ec29debb26228056eb1580)
+        ;
+
+        
+    
+    
+            marker_c220385c49cb4a5c1d11b5e02883152d.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Joshua Tree
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c220385c49cb4a5c1d11b5e02883152d.setIcon(icon_3647e15aa44d003b4334fa377281e38d);
+            
+    
+            var marker_686ad2daf799bef6a80eb4299367d506 = L.marker(
+                [34.05, -118.25],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_064671a1f2b780c0a0407b9f894ca982 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10c4c9c0615aae9e59a760b8b78706aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d276005c3cba8ad383dd15a66a93df3 = $(`<div id="html_5d276005c3cba8ad383dd15a66a93df3" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.darkskylacounty.org target=_blank>https://www.darkskylacounty.org</a> <br> <strong>Contact:</strong> <br> lacounty [at] darksky [dot] org</div>`)[0];
+                popup_10c4c9c0615aae9e59a760b8b78706aa.setContent(html_5d276005c3cba8ad383dd15a66a93df3);
+            
+        
+
+        marker_686ad2daf799bef6a80eb4299367d506.bindPopup(popup_10c4c9c0615aae9e59a760b8b78706aa)
+        ;
+
+        
+    
+    
+            marker_686ad2daf799bef6a80eb4299367d506.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Los Angeles County
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_686ad2daf799bef6a80eb4299367d506.setIcon(icon_064671a1f2b780c0a0407b9f894ca982);
+            
+    
+            var marker_0aaa233e508f896cbb4af52ab5123a1a = L.marker(
+                [33.02, -116.77],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_3a20edb3187f2c29c726129f4597d19c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51e03d6ef96ff3efebec8ff81dbfeb30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_187d61bb277014808a5b4d59e74137f7 = $(`<div id="html_187d61bb277014808a5b4d59e74137f7" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskysandiego.org/ target=_blank>https://darkskysandiego.org/</a></div>`)[0];
+                popup_51e03d6ef96ff3efebec8ff81dbfeb30.setContent(html_187d61bb277014808a5b4d59e74137f7);
+            
+        
+
+        marker_0aaa233e508f896cbb4af52ab5123a1a.bindPopup(popup_51e03d6ef96ff3efebec8ff81dbfeb30)
+        ;
+
+        
+    
+    
+            marker_0aaa233e508f896cbb4af52ab5123a1a.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     San Diego County 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0aaa233e508f896cbb4af52ab5123a1a.setIcon(icon_3a20edb3187f2c29c726129f4597d19c);
+            
+    
+            var marker_e467e115e97d02c66b7b2b88a3f89298 = L.marker(
+                [35.6, -121.1],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_213f167e7dc6fa0a8afef62f439be4cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_580f0926f5e43b2c43fae3e60ee04a00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2382339098dc3edd85f2f68a74d3616 = $(`<div id="html_e2382339098dc3edd85f2f68a74d3616" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.we-watch.org/focus/save-our-stars/ target=_blank>https://www.we-watch.org/focus/save-our-stars/</a> <br> <strong>Contact:</strong> <br> nancyfemerson52 [at] gmail [dot] com</div>`)[0];
+                popup_580f0926f5e43b2c43fae3e60ee04a00.setContent(html_e2382339098dc3edd85f2f68a74d3616);
+            
+        
+
+        marker_e467e115e97d02c66b7b2b88a3f89298.bindPopup(popup_580f0926f5e43b2c43fae3e60ee04a00)
+        ;
+
+        
+    
+    
+            marker_e467e115e97d02c66b7b2b88a3f89298.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Central Coast
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e467e115e97d02c66b7b2b88a3f89298.setIcon(icon_213f167e7dc6fa0a8afef62f439be4cf);
+            
+    
+            var marker_2bac52e305057ef4787ef3f1f10ca5b8 = L.marker(
+                [36.97412, -122.0308],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_8f5bb6137cd183a5fd8294b44d0f4128 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_847ca398805c93ff00070af679bd4b10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca41a71f5023f3c2a9fbf378fe36fdf2 = $(`<div id="html_ca41a71f5023f3c2a9fbf378fe36fdf2" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://santacruzdarksky.org target=_blank>https://santacruzdarksky.org</a> <br> <strong>Contact:</strong> <br> idasantacruzca [at] gmail [dot] com</div>`)[0];
+                popup_847ca398805c93ff00070af679bd4b10.setContent(html_ca41a71f5023f3c2a9fbf378fe36fdf2);
+            
+        
+
+        marker_2bac52e305057ef4787ef3f1f10ca5b8.bindPopup(popup_847ca398805c93ff00070af679bd4b10)
+        ;
+
+        
+    
+    
+            marker_2bac52e305057ef4787ef3f1f10ca5b8.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Santa Cruz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2bac52e305057ef4787ef3f1f10ca5b8.setIcon(icon_8f5bb6137cd183a5fd8294b44d0f4128);
+            
+    
+            var marker_b3babe7efb0139b06502f6d760eb0231 = L.marker(
+                [39.113014, -105.358887],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_3348a411a48afee314a5a4dd0c20d6d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2960ee724712da2c5ca8e542f6dfb41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9da2ceafef2a63204758d213bd91980 = $(`<div id="html_b9da2ceafef2a63204758d213bd91980" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskycolorado.org/ target=_blank>http://darkskycolorado.org/</a> <br> <strong>Contact:</strong> <br> chair [at] darkskycolorado [dot] org</div>`)[0];
+                popup_f2960ee724712da2c5ca8e542f6dfb41.setContent(html_b9da2ceafef2a63204758d213bd91980);
+            
+        
+
+        marker_b3babe7efb0139b06502f6d760eb0231.bindPopup(popup_f2960ee724712da2c5ca8e542f6dfb41)
+        ;
+
+        
+    
+    
+            marker_b3babe7efb0139b06502f6d760eb0231.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Colorado
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b3babe7efb0139b06502f6d760eb0231.setIcon(icon_3348a411a48afee314a5a4dd0c20d6d4);
+            
+    
+            var marker_9c29df7f1622f6d9ca1b5d5074a21230 = L.marker(
+                [41.6, -72.7],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_a58af9ad32933fb44dd307f58490a573 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_08ac5248d79248d429db83bf98fb67ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_548e405e6ba0176ed541a848b58c83b3 = $(`<div id="html_548e405e6ba0176ed541a848b58c83b3" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> leo [at] smith [dot] net</div>`)[0];
+                popup_08ac5248d79248d429db83bf98fb67ee.setContent(html_548e405e6ba0176ed541a848b58c83b3);
+            
+        
+
+        marker_9c29df7f1622f6d9ca1b5d5074a21230.bindPopup(popup_08ac5248d79248d429db83bf98fb67ee)
+        ;
+
+        
+    
+    
+            marker_9c29df7f1622f6d9ca1b5d5074a21230.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Connecticut
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c29df7f1622f6d9ca1b5d5074a21230.setIcon(icon_a58af9ad32933fb44dd307f58490a573);
+            
+    
+            var marker_d81bf8a7aefa10296be3715cb6fda41e = L.marker(
+                [28.0, -82.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_5957407bbf6e4d0c42d2d02139c6c3fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_567a65bf7f2a78c0b6e8f8a3706fda6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24c219e25e795a93779ea5ecd9a02bdf = $(`<div id="html_24c219e25e795a93779ea5ecd9a02bdf" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> central.florida [at] darksky [dot] org</div>`)[0];
+                popup_567a65bf7f2a78c0b6e8f8a3706fda6f.setContent(html_24c219e25e795a93779ea5ecd9a02bdf);
+            
+        
+
+        marker_d81bf8a7aefa10296be3715cb6fda41e.bindPopup(popup_567a65bf7f2a78c0b6e8f8a3706fda6f)
+        ;
+
+        
+    
+    
+            marker_d81bf8a7aefa10296be3715cb6fda41e.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Central Florida
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d81bf8a7aefa10296be3715cb6fda41e.setIcon(icon_5957407bbf6e4d0c42d2d02139c6c3fc);
+            
+    
+            var marker_746eaaa8d6f97504506bdd1a1ee476b6 = L.marker(
+                [19.741755, -155.844437],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_7afe4a9f97a0feb3a560f0a263ce1b27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb3c9d93200574d3479e0c4abfa07dbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a790a015690cfb124a802fe8d10d62d5 = $(`<div id="html_a790a015690cfb124a802fe8d10d62d5" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> howard.c.wiig [at] hawaii [dot] gov</div>`)[0];
+                popup_eb3c9d93200574d3479e0c4abfa07dbe.setContent(html_a790a015690cfb124a802fe8d10d62d5);
+            
+        
+
+        marker_746eaaa8d6f97504506bdd1a1ee476b6.bindPopup(popup_eb3c9d93200574d3479e0c4abfa07dbe)
+        ;
+
+        
+    
+    
+            marker_746eaaa8d6f97504506bdd1a1ee476b6.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Hawai’i
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_746eaaa8d6f97504506bdd1a1ee476b6.setIcon(icon_7afe4a9f97a0feb3a560f0a263ce1b27);
+            
+    
+            var marker_5ae8c8d6922c09dc73ba52148625e2d4 = L.marker(
+                [40.1, -89.3],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c35ccbd9dd664ea27bf3967b503b58eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_392c895783f0a2505c6b6c5412089470 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_897816b26532a31fc7d348c5292d9427 = $(`<div id="html_897816b26532a31fc7d348c5292d9427" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> hooveje [at] gmail [dot] com</div>`)[0];
+                popup_392c895783f0a2505c6b6c5412089470.setContent(html_897816b26532a31fc7d348c5292d9427);
+            
+        
+
+        marker_5ae8c8d6922c09dc73ba52148625e2d4.bindPopup(popup_392c895783f0a2505c6b6c5412089470)
+        ;
+
+        
+    
+    
+            marker_5ae8c8d6922c09dc73ba52148625e2d4.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Central Illinois
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ae8c8d6922c09dc73ba52148625e2d4.setIcon(icon_c35ccbd9dd664ea27bf3967b503b58eb);
+            
+    
+            var marker_d3a8233c89bf6d8c9c8839170dd308a0 = L.marker(
+                [41.881944, -87.627778],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_5aacbdeda4e120135cff4e26b794f04d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81e207d5a5bd147aceb757fad3218061 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f329b19ee027e55af3c6a194d9990bf = $(`<div id="html_1f329b19ee027e55af3c6a194d9990bf" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskychicago.org/ target=_blank>http://darkskychicago.org/</a> <br> <strong>Contact:</strong> <br> ken.walczak [at] gmail.com</div>`)[0];
+                popup_81e207d5a5bd147aceb757fad3218061.setContent(html_1f329b19ee027e55af3c6a194d9990bf);
+            
+        
+
+        marker_d3a8233c89bf6d8c9c8839170dd308a0.bindPopup(popup_81e207d5a5bd147aceb757fad3218061)
+        ;
+
+        
+    
+    
+            marker_d3a8233c89bf6d8c9c8839170dd308a0.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Chicago
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3a8233c89bf6d8c9c8839170dd308a0.setIcon(icon_5aacbdeda4e120135cff4e26b794f04d);
+            
+    
+            var marker_e79343a9fd8cdb508c95cb3990fc59b0 = L.marker(
+                [37.0, -86.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_73b2de1c40e44ce80ad20968bef5c8ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73a607cb0c1e5ec36b29c5b04aaf8d1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5507ef53234eb288d8d830fc9a3ff60e = $(`<div id="html_5507ef53234eb288d8d830fc9a3ff60e" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.facebook.com/people/DarkSky-KY/61575105785771/# target=_blank>https://www.facebook.com/people/DarkSky-KY/61575105785771/#</a> <br> <strong>Contact:</strong> <br> gocardskd [at] aol [dot] com</div>`)[0];
+                popup_73a607cb0c1e5ec36b29c5b04aaf8d1e.setContent(html_5507ef53234eb288d8d830fc9a3ff60e);
+            
+        
+
+        marker_e79343a9fd8cdb508c95cb3990fc59b0.bindPopup(popup_73a607cb0c1e5ec36b29c5b04aaf8d1e)
+        ;
+
+        
+    
+    
+            marker_e79343a9fd8cdb508c95cb3990fc59b0.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Kentucky
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e79343a9fd8cdb508c95cb3990fc59b0.setIcon(icon_73b2de1c40e44ce80ad20968bef5c8ca);
+            
+    
+            var marker_e0303b0808bf4ce51f1f0789472c8358 = L.marker(
+                [45.0, -69.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_bee5a1942957669a121acc98fbdbc392 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3c0b3ad3189b9c14af672cfcf0697a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c2a6388816e8e5cb706f86442fa34b0 = $(`<div id="html_4c2a6388816e8e5cb706f86442fa34b0" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskymaine.com target=_blank>https://darkskymaine.com</a> <br> <strong>Contact:</strong> <br> darkskymaine [at] gmail [dot] com</div>`)[0];
+                popup_d3c0b3ad3189b9c14af672cfcf0697a8.setContent(html_4c2a6388816e8e5cb706f86442fa34b0);
+            
+        
+
+        marker_e0303b0808bf4ce51f1f0789472c8358.bindPopup(popup_d3c0b3ad3189b9c14af672cfcf0697a8)
+        ;
+
+        
+    
+    
+            marker_e0303b0808bf4ce51f1f0789472c8358.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Maine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0303b0808bf4ce51f1f0789472c8358.setIcon(icon_bee5a1942957669a121acc98fbdbc392);
+            
+    
+            var marker_d271545cad6876deaf5d0f964c1b1a25 = L.marker(
+                [39.0, -77.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_6b28a5ba029d4bd1e5601020897cb2c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67345ed62f14503913ac8400588d8205 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42863a4ebb6f9d671b74c9f42fa66a3b = $(`<div id="html_42863a4ebb6f9d671b74c9f42fa66a3b" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskymd.org target=_blank>https://darkskymd.org</a> <br> <strong>Contact:</strong> <br> maryland [at] darksky [dot] org</div>`)[0];
+                popup_67345ed62f14503913ac8400588d8205.setContent(html_42863a4ebb6f9d671b74c9f42fa66a3b);
+            
+        
+
+        marker_d271545cad6876deaf5d0f964c1b1a25.bindPopup(popup_67345ed62f14503913ac8400588d8205)
+        ;
+
+        
+    
+    
+            marker_d271545cad6876deaf5d0f964c1b1a25.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Maryland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d271545cad6876deaf5d0f964c1b1a25.setIcon(icon_6b28a5ba029d4bd1e5601020897cb2c4);
+            
+    
+            var marker_8684356c9d51a83540b3eda1b41ebc65 = L.marker(
+                [42.3, -72.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_74bfc2a345bdca4d64bcdc1f581c6e7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1973d78121d3c44e0313ba9579b5f46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13b74e08ca9348bf6f3b2e52e74966a6 = $(`<div id="html_13b74e08ca9348bf6f3b2e52e74966a6" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://idamass.wordpress.com target=_blank>https://idamass.wordpress.com</a> <br> <strong>Contact:</strong> <br> IDAMassachusetts [at] darksky [dot] org</div>`)[0];
+                popup_f1973d78121d3c44e0313ba9579b5f46.setContent(html_13b74e08ca9348bf6f3b2e52e74966a6);
+            
+        
+
+        marker_8684356c9d51a83540b3eda1b41ebc65.bindPopup(popup_f1973d78121d3c44e0313ba9579b5f46)
+        ;
+
+        
+    
+    
+            marker_8684356c9d51a83540b3eda1b41ebc65.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Massachusetts
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8684356c9d51a83540b3eda1b41ebc65.setIcon(icon_74bfc2a345bdca4d64bcdc1f581c6e7a);
+            
+    
+            var marker_15770bf678d3fd175fa4da957143599b = L.marker(
+                [47.0, -110.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_81c9f3446d160291c066732a687f2d1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0ec49541dd4309fe3319e45a8414503 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78b7cca1496422c91823a7203c3972f8 = $(`<div id="html_78b7cca1496422c91823a7203c3972f8" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://starryskiesnorth.org target=_blank>https://starryskiesnorth.org</a> <br> <strong>Contact:</strong> <br> info [at] starryskiesnorth [dot] org</div>`)[0];
+                popup_d0ec49541dd4309fe3319e45a8414503.setContent(html_78b7cca1496422c91823a7203c3972f8);
+            
+        
+
+        marker_15770bf678d3fd175fa4da957143599b.bindPopup(popup_d0ec49541dd4309fe3319e45a8414503)
+        ;
+
+        
+    
+    
+            marker_15770bf678d3fd175fa4da957143599b.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Midwest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15770bf678d3fd175fa4da957143599b.setIcon(icon_81c9f3446d160291c066732a687f2d1c);
+            
+    
+            var marker_ef9e9d2dec3c0ede42d39e65baee3002 = L.marker(
+                [38.0, -92.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_1888f9a60c8d3cba1efacaf1bf5cf1e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5c113c507ff17e525b1f6372481ac52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee929b64872de4c13ac61764641e5c02 = $(`<div id="html_ee929b64872de4c13ac61764641e5c02" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskymissouri.org/ target=_blank>http://darkskymissouri.org/</a> <br> <strong>Contact:</strong> <br> chair [at] darkskymissouri [dot] org</div>`)[0];
+                popup_f5c113c507ff17e525b1f6372481ac52.setContent(html_ee929b64872de4c13ac61764641e5c02);
+            
+        
+
+        marker_ef9e9d2dec3c0ede42d39e65baee3002.bindPopup(popup_f5c113c507ff17e525b1f6372481ac52)
+        ;
+
+        
+    
+    
+            marker_ef9e9d2dec3c0ede42d39e65baee3002.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Missouri
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef9e9d2dec3c0ede42d39e65baee3002.setIcon(icon_1888f9a60c8d3cba1efacaf1bf5cf1e3);
+            
+    
+            var marker_cdbea30c14d21841530268bdc51bfa21 = L.marker(
+                [40.0, -74.5],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_535a1554b92db697cfa7011f37d91722 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af105bfa68d6aba622894ba5a2553849 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d8e6901b5a823b8440076c3aa4716cd = $(`<div id="html_5d8e6901b5a823b8440076c3aa4716cd" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.astra-nj.com target=_blank>https://www.astra-nj.com</a> <br> <strong>Contact:</strong> <br> mariconda [at] darksky [dot] org</div>`)[0];
+                popup_af105bfa68d6aba622894ba5a2553849.setContent(html_5d8e6901b5a823b8440076c3aa4716cd);
+            
+        
+
+        marker_cdbea30c14d21841530268bdc51bfa21.bindPopup(popup_af105bfa68d6aba622894ba5a2553849)
+        ;
+
+        
+    
+    
+            marker_cdbea30c14d21841530268bdc51bfa21.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     New Jersey
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cdbea30c14d21841530268bdc51bfa21.setIcon(icon_535a1554b92db697cfa7011f37d91722);
+            
+    
+            var marker_0c52d690fc245f43c24df9c17fbb9f2d = L.marker(
+                [34.0, -106.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_d5c57c8d4709f2b30aba7ba601f7fde1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31b69b6194493ff3116da3bc6e360227 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc8245244e39fb94ab75a82ca3ab1644 = $(`<div id="html_bc8245244e39fb94ab75a82ca3ab1644" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://nmdarksky.github.io target=_blank>https://nmdarksky.github.io</a> <br> <strong>Contact:</strong> <br> newmexico [at] darksky [dot] org</div>`)[0];
+                popup_31b69b6194493ff3116da3bc6e360227.setContent(html_bc8245244e39fb94ab75a82ca3ab1644);
+            
+        
+
+        marker_0c52d690fc245f43c24df9c17fbb9f2d.bindPopup(popup_31b69b6194493ff3116da3bc6e360227)
+        ;
+
+        
+    
+    
+            marker_0c52d690fc245f43c24df9c17fbb9f2d.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     New Mexico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c52d690fc245f43c24df9c17fbb9f2d.setIcon(icon_d5c57c8d4709f2b30aba7ba601f7fde1);
+            
+    
+            var marker_0be51f4e7c0671a812e85e262cd98dfc = L.marker(
+                [42.75, -75.77],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_9b896de8e3a25facc953574c2ed9e62d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bf571f2d5b6f32599f052e10d12c4c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ab8ee36d12cc82560b37782dc737c99 = $(`<div id="html_3ab8ee36d12cc82560b37782dc737c99" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> ruoyu.li [at] darksky [dot] org</div>`)[0];
+                popup_9bf571f2d5b6f32599f052e10d12c4c9.setContent(html_3ab8ee36d12cc82560b37782dc737c99);
+            
+        
+
+        marker_0be51f4e7c0671a812e85e262cd98dfc.bindPopup(popup_9bf571f2d5b6f32599f052e10d12c4c9)
+        ;
+
+        
+    
+    
+            marker_0be51f4e7c0671a812e85e262cd98dfc.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     New York
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0be51f4e7c0671a812e85e262cd98dfc.setIcon(icon_9b896de8e3a25facc953574c2ed9e62d);
+            
+    
+            var marker_f18684b9fdf82f290779332c9e83d70b = L.marker(
+                [35.17, -79.861],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c833753bad3d19dd058b6ca4d2718c0c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef65c8d3a76bcfa6c3e81fbeba9c7371 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03e531426c58a839941baace6d4b1a4c = $(`<div id="html_03e531426c58a839941baace6d4b1a4c" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://ncdarksky.org/ target=_blank>https://ncdarksky.org/</a> <br> <strong>Contact:</strong> <br> catondb [at] appstate [dot] edu</div>`)[0];
+                popup_ef65c8d3a76bcfa6c3e81fbeba9c7371.setContent(html_03e531426c58a839941baace6d4b1a4c);
+            
+        
+
+        marker_f18684b9fdf82f290779332c9e83d70b.bindPopup(popup_ef65c8d3a76bcfa6c3e81fbeba9c7371)
+        ;
+
+        
+    
+    
+            marker_f18684b9fdf82f290779332c9e83d70b.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     North Carolina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f18684b9fdf82f290779332c9e83d70b.setIcon(icon_c833753bad3d19dd058b6ca4d2718c0c);
+            
+    
+            var marker_532ad69be0dedcff55fb2b0290986b66 = L.marker(
+                [40.3653, -82.6694],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_7dd419a7421a25e53bbb6c1f9af45156 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7a497c705eed0d62032c0cee518dedf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d389d11e39d036d8e3b54dc84aecb8f9 = $(`<div id="html_d389d11e39d036d8e3b54dc84aecb8f9" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskyohio.org target=_blank>https://darkskyohio.org</a> <br> <strong>Contact:</strong> <br> Ohiodarksky [at] gmail [dot] com</div>`)[0];
+                popup_d7a497c705eed0d62032c0cee518dedf.setContent(html_d389d11e39d036d8e3b54dc84aecb8f9);
+            
+        
+
+        marker_532ad69be0dedcff55fb2b0290986b66.bindPopup(popup_d7a497c705eed0d62032c0cee518dedf)
+        ;
+
+        
+    
+    
+            marker_532ad69be0dedcff55fb2b0290986b66.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Ohio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_532ad69be0dedcff55fb2b0290986b66.setIcon(icon_7dd419a7421a25e53bbb6c1f9af45156);
+            
+    
+            var marker_fe50e9d5ac536ef567f58b78d55a0d75 = L.marker(
+                [43.9333, -120.5583],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_0fdb1aa2edc19b83c3d2c218555679de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_713eb2c2241d55a087db293a30e81b42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20b503e0ff7654f7b513b0f4f454f091 = $(`<div id="html_20b503e0ff7654f7b513b0f4f454f091" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskyoregon.org/ target=_blank>http://darkskyoregon.org/</a> <br> <strong>Contact:</strong> <br> hello [at] darkskyoregon [dot] org</div>`)[0];
+                popup_713eb2c2241d55a087db293a30e81b42.setContent(html_20b503e0ff7654f7b513b0f4f454f091);
+            
+        
+
+        marker_fe50e9d5ac536ef567f58b78d55a0d75.bindPopup(popup_713eb2c2241d55a087db293a30e81b42)
+        ;
+
+        
+    
+    
+            marker_fe50e9d5ac536ef567f58b78d55a0d75.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Oregon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fe50e9d5ac536ef567f58b78d55a0d75.setIcon(icon_0fdb1aa2edc19b83c3d2c218555679de);
+            
+    
+            var marker_e9d261d915e0b47adddec263f0924494 = L.marker(
+                [41.2033, -77.1947],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_db72b18dc19a15a9c1488e596248690b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b6060cbb2d9f6291a082e8745a8aaa9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38759b2db5251cafdaeff4db2143ed24 = $(`<div id="html_38759b2db5251cafdaeff4db2143ed24" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.darkskypa.org target=_blank>https://www.darkskypa.org</a> <br> <strong>Contact:</strong> <br> darkskypa.org [at] gmail [dot] com</div>`)[0];
+                popup_8b6060cbb2d9f6291a082e8745a8aaa9.setContent(html_38759b2db5251cafdaeff4db2143ed24);
+            
+        
+
+        marker_e9d261d915e0b47adddec263f0924494.bindPopup(popup_8b6060cbb2d9f6291a082e8745a8aaa9)
+        ;
+
+        
+    
+    
+            marker_e9d261d915e0b47adddec263f0924494.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Pennsylvania
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9d261d915e0b47adddec263f0924494.setIcon(icon_db72b18dc19a15a9c1488e596248690b);
+            
+    
+            var marker_2703e420b1a06b149385a727f717c9b7 = L.marker(
+                [40.44062, -79.99589],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_aefcd41a7d7a6fba26bb2158b34fc97e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d82400588afd4c019cc08fa44d7e737 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b7a025aa16e172694195c16356bca47 = $(`<div id="html_4b7a025aa16e172694195c16356bca47" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://idapgh.org/ target=_blank>http://idapgh.org/</a> <br> <strong>Contact:</strong> <br> dianeturnshek [at] gmail [dot] com</div>`)[0];
+                popup_3d82400588afd4c019cc08fa44d7e737.setContent(html_4b7a025aa16e172694195c16356bca47);
+            
+        
+
+        marker_2703e420b1a06b149385a727f717c9b7.bindPopup(popup_3d82400588afd4c019cc08fa44d7e737)
+        ;
+
+        
+    
+    
+            marker_2703e420b1a06b149385a727f717c9b7.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Pittsburgh
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2703e420b1a06b149385a727f717c9b7.setIcon(icon_aefcd41a7d7a6fba26bb2158b34fc97e);
+            
+    
+            var marker_a35c31a3f88c98bc0e2de6b9ad7c5801 = L.marker(
+                [44.4442, -100.2264],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_dd78644866b00587f40aa81006c2b77b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73b9c4310aa8ea9c676e87d6922c9075 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b5ad7a6c97de08e720228269c577ac1 = $(`<div id="html_2b5ad7a6c97de08e720228269c577ac1" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> southdakotaoffice [at] darkskymovement [dot] org</div>`)[0];
+                popup_73b9c4310aa8ea9c676e87d6922c9075.setContent(html_2b5ad7a6c97de08e720228269c577ac1);
+            
+        
+
+        marker_a35c31a3f88c98bc0e2de6b9ad7c5801.bindPopup(popup_73b9c4310aa8ea9c676e87d6922c9075)
+        ;
+
+        
+    
+    
+            marker_a35c31a3f88c98bc0e2de6b9ad7c5801.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     South Dakota
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a35c31a3f88c98bc0e2de6b9ad7c5801.setIcon(icon_dd78644866b00587f40aa81006c2b77b);
+            
+    
+            var marker_ccc2f548fca10a8ead36c3a812b9b76b = L.marker(
+                [35.860119, -86.660156],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_cc93b1925c085f02b15236eae72ff813 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e43049e5dbeb4185e240a88aa7d56bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99fb85d0e8e2852d9e00b516b72f6f11 = $(`<div id="html_99fb85d0e8e2852d9e00b516b72f6f11" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://tennesseestarryskies.org target=_blank>https://tennesseestarryskies.org</a> <br> <strong>Contact:</strong> <br> TennesseeStarrySkies [at] gmail [dot] com</div>`)[0];
+                popup_9e43049e5dbeb4185e240a88aa7d56bc.setContent(html_99fb85d0e8e2852d9e00b516b72f6f11);
+            
+        
+
+        marker_ccc2f548fca10a8ead36c3a812b9b76b.bindPopup(popup_9e43049e5dbeb4185e240a88aa7d56bc)
+        ;
+
+        
+    
+    
+            marker_ccc2f548fca10a8ead36c3a812b9b76b.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Tennessee
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ccc2f548fca10a8ead36c3a812b9b76b.setIcon(icon_cc93b1925c085f02b15236eae72ff813);
+            
+    
+            var marker_bafc7d2bf9703e9b2255ea0023f4dbea = L.marker(
+                [31.23, -99.1],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_dfc2cf528e45f9039841e1c2dc361fca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37e0c0696fc06df21715ed953dd0474c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae4d2fac37b6ae368b5bfa0823923bb7 = $(`<div id="html_ae4d2fac37b6ae368b5bfa0823923bb7" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskytexas.org/ target=_blank>http://darkskytexas.org/</a> <br> <strong>Contact:</strong> <br> contact [at] darkskytexas [dot] org</div>`)[0];
+                popup_37e0c0696fc06df21715ed953dd0474c.setContent(html_ae4d2fac37b6ae368b5bfa0823923bb7);
+            
+        
+
+        marker_bafc7d2bf9703e9b2255ea0023f4dbea.bindPopup(popup_37e0c0696fc06df21715ed953dd0474c)
+        ;
+
+        
+    
+    
+            marker_bafc7d2bf9703e9b2255ea0023f4dbea.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Texas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bafc7d2bf9703e9b2255ea0023f4dbea.setIcon(icon_dfc2cf528e45f9039841e1c2dc361fca);
+            
+    
+            var marker_101fa9e08a81be5322b9e9f5c8d920dd = L.marker(
+                [39.18, -111.38],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_1ce14e1e935742c7e579a685b59a596a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a93dd4a1b07155da7ecd6c4513b5f642 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6dd4d20508f19d264023fe3ab792b79a = $(`<div id="html_6dd4d20508f19d264023fe3ab792b79a" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskyutah.org/ target=_blank>http://darkskyutah.org/</a> <br> <strong>Contact:</strong> <br> darkskyutahboard [at] gmail [dot] com</div>`)[0];
+                popup_a93dd4a1b07155da7ecd6c4513b5f642.setContent(html_6dd4d20508f19d264023fe3ab792b79a);
+            
+        
+
+        marker_101fa9e08a81be5322b9e9f5c8d920dd.bindPopup(popup_a93dd4a1b07155da7ecd6c4513b5f642)
+        ;
+
+        
+    
+    
+            marker_101fa9e08a81be5322b9e9f5c8d920dd.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Utah
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_101fa9e08a81be5322b9e9f5c8d920dd.setIcon(icon_1ce14e1e935742c7e579a685b59a596a);
+            
+    
+            var marker_7bc8775b30b662fcfb05248a64c272b2 = L.marker(
+                [37.5215, -78.8537],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_f0ed45b36ba2e247abc1177b1b05d8f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b12a21c8f5ed6b140d69423d24fb1fea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c540455810dfd3c2261778f0bb7aa80 = $(`<div id="html_7c540455810dfd3c2261778f0bb7aa80" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://www.darkvirginiasky.org/ target=_blank>http://www.darkvirginiasky.org/</a> <br> <strong>Contact:</strong> <br> lauragreenleaf [at] verizon [dot] net</div>`)[0];
+                popup_b12a21c8f5ed6b140d69423d24fb1fea.setContent(html_7c540455810dfd3c2261778f0bb7aa80);
+            
+        
+
+        marker_7bc8775b30b662fcfb05248a64c272b2.bindPopup(popup_b12a21c8f5ed6b140d69423d24fb1fea)
+        ;
+
+        
+    
+    
+            marker_7bc8775b30b662fcfb05248a64c272b2.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Virginia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7bc8775b30b662fcfb05248a64c272b2.setIcon(icon_f0ed45b36ba2e247abc1177b1b05d8f4);
+            
+    
+            var marker_e20f05fbd46fb12fe54e2493d1d0272f = L.marker(
+                [38.8625, -77.345],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_017de74534169cae211f127797d61bd0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a1ef1d581b773f0e5d8b9644d2c1a37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f23ef40003aa20d84edd31116cc92d6 = $(`<div id="html_4f23ef40003aa20d84edd31116cc92d6" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.darkskynova.org target=_blank>https://www.darkskynova.org</a> <br> <strong>Contact:</strong> <br> nova [at] darksky [dot] org</div>`)[0];
+                popup_8a1ef1d581b773f0e5d8b9644d2c1a37.setContent(html_4f23ef40003aa20d84edd31116cc92d6);
+            
+        
+
+        marker_e20f05fbd46fb12fe54e2493d1d0272f.bindPopup(popup_8a1ef1d581b773f0e5d8b9644d2c1a37)
+        ;
+
+        
+    
+    
+            marker_e20f05fbd46fb12fe54e2493d1d0272f.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     NOVA (Virginia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e20f05fbd46fb12fe54e2493d1d0272f.setIcon(icon_017de74534169cae211f127797d61bd0);
+            
+    
+            var marker_593eac878676bb1541db16d86fd47d56 = L.marker(
+                [47.3826, -120.4472],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_18d9cb031f25ff28cb3d074ad2e49bb4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fad3664ffe6f175d4306aa382f4ca662 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d4e1cb122bd12bf6486840b4ff98286 = $(`<div id="html_0d4e1cb122bd12bf6486840b4ff98286" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> ingramdw303 [at] gmail [dot] com</div>`)[0];
+                popup_fad3664ffe6f175d4306aa382f4ca662.setContent(html_0d4e1cb122bd12bf6486840b4ff98286);
+            
+        
+
+        marker_593eac878676bb1541db16d86fd47d56.bindPopup(popup_fad3664ffe6f175d4306aa382f4ca662)
+        ;
+
+        
+    
+    
+            marker_593eac878676bb1541db16d86fd47d56.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Washington
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_593eac878676bb1541db16d86fd47d56.setIcon(icon_18d9cb031f25ff28cb3d074ad2e49bb4);
+            
+    
+            var marker_4507e6ac093c943cbedb305c40687d0a = L.marker(
+                [39.323611, -77.749444],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_07d4d08bb40f137a4bad2db5946483e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40d29493d91d3dec123961cc7956e7c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8523a2376edf798f9d21f1b208dbf22 = $(`<div id="html_e8523a2376edf798f9d21f1b208dbf22" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://www.bhfdarksky.org target=_blank>https://www.bhfdarksky.org</a> <br> <strong>Contact:</strong> <br> bhf [at] darksky [dot] org</div>`)[0];
+                popup_40d29493d91d3dec123961cc7956e7c8.setContent(html_e8523a2376edf798f9d21f1b208dbf22);
+            
+        
+
+        marker_4507e6ac093c943cbedb305c40687d0a.bindPopup(popup_40d29493d91d3dec123961cc7956e7c8)
+        ;
+
+        
+    
+    
+            marker_4507e6ac093c943cbedb305c40687d0a.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Bolivar-Harpers Ferry
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4507e6ac093c943cbedb305c40687d0a.setIcon(icon_07d4d08bb40f137a4bad2db5946483e6);
+            
+    
+            var marker_d3ed7f7952abe36c488140858d76a170 = L.marker(
+                [38.8951, -77.0364],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_9f56098fbeebfaa4ba519fb573540481 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5832e213f1b46742a991771192b09ecb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1edfc6a4da6904e565daee6a66dde7a4 = $(`<div id="html_1edfc6a4da6904e565daee6a66dde7a4" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://www.darkskydc.org/ target=_blank>http://www.darkskydc.org/</a></div>`)[0];
+                popup_5832e213f1b46742a991771192b09ecb.setContent(html_1edfc6a4da6904e565daee6a66dde7a4);
+            
+        
+
+        marker_d3ed7f7952abe36c488140858d76a170.bindPopup(popup_5832e213f1b46742a991771192b09ecb)
+        ;
+
+        
+    
+    
+            marker_d3ed7f7952abe36c488140858d76a170.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Washington, D.C.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3ed7f7952abe36c488140858d76a170.setIcon(icon_9f56098fbeebfaa4ba519fb573540481);
+            
+    
+            var marker_31b41f6cfc8b5deaaa4f8163de104946 = L.marker(
+                [44.6243, -89.9941],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_dba5831f88d9279a285a349fe92b234b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7a2058a493b8325662edb51acaef758d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa971f7f1d8e8f954eb3e507fc0b730a = $(`<div id="html_fa971f7f1d8e8f954eb3e507fc0b730a" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskywi.org/ target=_blank>http://darkskywi.org/</a> <br> <strong>Contact:</strong> <br> wisconsin [at] darksky [dot] org</div>`)[0];
+                popup_7a2058a493b8325662edb51acaef758d.setContent(html_fa971f7f1d8e8f954eb3e507fc0b730a);
+            
+        
+
+        marker_31b41f6cfc8b5deaaa4f8163de104946.bindPopup(popup_7a2058a493b8325662edb51acaef758d)
+        ;
+
+        
+    
+    
+            marker_31b41f6cfc8b5deaaa4f8163de104946.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Wisconsin
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31b41f6cfc8b5deaaa4f8163de104946.setIcon(icon_dba5831f88d9279a285a349fe92b234b);
+            
+    
+            var marker_649a5ffbcf2aea1d6b46fc9e001a155d = L.marker(
+                [-37.0201, 144.9646],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_6805905b1fecab5bd21c23ae893bd1ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5a6aa4f2ba2b8b8806bf456ae4e1a322 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00c1d056aabb6d31d4cf355b5b8a98c3 = $(`<div id="html_00c1d056aabb6d31d4cf355b5b8a98c3" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darkskyvic.org target=_blank>darkskyvic.org</a> <br> <strong>Contact:</strong> <br> president [at] darkskyvic [dot] org</div>`)[0];
+                popup_5a6aa4f2ba2b8b8806bf456ae4e1a322.setContent(html_00c1d056aabb6d31d4cf355b5b8a98c3);
+            
+        
+
+        marker_649a5ffbcf2aea1d6b46fc9e001a155d.bindPopup(popup_5a6aa4f2ba2b8b8806bf456ae4e1a322)
+        ;
+
+        
+    
+    
+            marker_649a5ffbcf2aea1d6b46fc9e001a155d.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Victoria (Australia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_649a5ffbcf2aea1d6b46fc9e001a155d.setIcon(icon_6805905b1fecab5bd21c23ae893bd1ff);
+            
+    
+            var marker_dfcf67c21fdfb6d53fff5c269940ea8c = L.marker(
+                [-41.640079, 146.315918],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_039deaaa996fd0bfd9f665912e0637c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a817a42d6d1de329304282cf70d4a81e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dd2b115014d4b116eb2804fc07ff2d3 = $(`<div id="html_5dd2b115014d4b116eb2804fc07ff2d3" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=darkskytasmania.org target=_blank>darkskytasmania.org</a> <br> <strong>Contact:</strong> <br> president [at] darkskytasmania [dot] org</div>`)[0];
+                popup_a817a42d6d1de329304282cf70d4a81e.setContent(html_5dd2b115014d4b116eb2804fc07ff2d3);
+            
+        
+
+        marker_dfcf67c21fdfb6d53fff5c269940ea8c.bindPopup(popup_a817a42d6d1de329304282cf70d4a81e)
+        ;
+
+        
+    
+    
+            marker_dfcf67c21fdfb6d53fff5c269940ea8c.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Tasmania (Australia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfcf67c21fdfb6d53fff5c269940ea8c.setIcon(icon_039deaaa996fd0bfd9f665912e0637c0);
+            
+    
+            var marker_76456a878fb238459c5355e3a7ece2f0 = L.marker(
+                [-38.75, -64.5],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_03a4f479407e8cf29ea39128ba32eb90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f367706508ed3c1e31a982312f991b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f915fff68dd013dbc7510ca33e64488b = $(`<div id="html_f915fff68dd013dbc7510ca33e64488b" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> argentina [at] darksky [dot] org</div>`)[0];
+                popup_3f367706508ed3c1e31a982312f991b6.setContent(html_f915fff68dd013dbc7510ca33e64488b);
+            
+        
+
+        marker_76456a878fb238459c5355e3a7ece2f0.bindPopup(popup_3f367706508ed3c1e31a982312f991b6)
+        ;
+
+        
+    
+    
+            marker_76456a878fb238459c5355e3a7ece2f0.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Argentina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_76456a878fb238459c5355e3a7ece2f0.setIcon(icon_03a4f479407e8cf29ea39128ba32eb90);
+            
+    
+            var marker_59deebc76b89c34b05e31fba81c78c7d = L.marker(
+                [-14.235, -51.9253],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_46db5348ffdaf796f6642652fc516b56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c66c427ca5e7b9f460a17189f1a3df1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d878d39be85964544f8fe0b41fc4549 = $(`<div id="html_9d878d39be85964544f8fe0b41fc4549" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=facebook.com/darkskyrj target=_blank>facebook.com/darkskyrj</a> <br> <strong>Contact:</strong> <br> clubedeastronomia [at] gmail [dot] com</div>`)[0];
+                popup_0c66c427ca5e7b9f460a17189f1a3df1.setContent(html_9d878d39be85964544f8fe0b41fc4549);
+            
+        
+
+        marker_59deebc76b89c34b05e31fba81c78c7d.bindPopup(popup_0c66c427ca5e7b9f460a17189f1a3df1)
+        ;
+
+        
+    
+    
+            marker_59deebc76b89c34b05e31fba81c78c7d.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Brazil
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59deebc76b89c34b05e31fba81c78c7d.setIcon(icon_46db5348ffdaf796f6642652fc516b56);
+            
+    
+            var marker_4245ffee73def4a165565009543f9a7c = L.marker(
+                [-32.5, -55.75],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_8691dcd2475189c406e7475acc7f0a2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ee39575a564d05ac72e92783cb14690 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4989be7ef80784cb82978c7c49ae96c = $(`<div id="html_b4989be7ef80784cb82978c7c49ae96c" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> cenatur [at] yahoo [dot] com</div>`)[0];
+                popup_8ee39575a564d05ac72e92783cb14690.setContent(html_b4989be7ef80784cb82978c7c49ae96c);
+            
+        
+
+        marker_4245ffee73def4a165565009543f9a7c.bindPopup(popup_8ee39575a564d05ac72e92783cb14690)
+        ;
+
+        
+    
+    
+            marker_4245ffee73def4a165565009543f9a7c.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Uruguay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4245ffee73def4a165565009543f9a7c.setIcon(icon_8691dcd2475189c406e7475acc7f0a2a);
+            
+    
+            var marker_be4ac4e267263ca70f8f03e11d006f13 = L.marker(
+                [21.7679, 78.8718],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_430f10da041918c456e156177d96ddec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f88306e3e579e5e41eadc2e1992c04f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ca32009a47e355b6fd8c4505df9ef27 = $(`<div id="html_6ca32009a47e355b6fd8c4505df9ef27" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> darksky.india.wg[at] gmail [dot] org</div>`)[0];
+                popup_f88306e3e579e5e41eadc2e1992c04f4.setContent(html_6ca32009a47e355b6fd8c4505df9ef27);
+            
+        
+
+        marker_be4ac4e267263ca70f8f03e11d006f13.bindPopup(popup_f88306e3e579e5e41eadc2e1992c04f4)
+        ;
+
+        
+    
+    
+            marker_be4ac4e267263ca70f8f03e11d006f13.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     India
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be4ac4e267263ca70f8f03e11d006f13.setIcon(icon_430f10da041918c456e156177d96ddec);
+            
+    
+            var marker_79761eb6525ce6dc033a031a45f2f4e4 = L.marker(
+                [1.311, 103.844],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_093708a719610f8e7119fc43bf273e14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58755ce8fe27d93b32298f06082a33ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9076340414391e10c540daff930204f = $(`<div id="html_d9076340414391e10c540daff930204f" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> yusuke [at] ambiguous-light [dot] com</div>`)[0];
+                popup_58755ce8fe27d93b32298f06082a33ff.setContent(html_d9076340414391e10c540daff930204f);
+            
+        
+
+        marker_79761eb6525ce6dc033a031a45f2f4e4.bindPopup(popup_58755ce8fe27d93b32298f06082a33ff)
+        ;
+
+        
+    
+    
+            marker_79761eb6525ce6dc033a031a45f2f4e4.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Singapore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79761eb6525ce6dc033a031a45f2f4e4.setIcon(icon_093708a719610f8e7119fc43bf273e14);
+            
+    
+            var marker_526e931ede8b64625bec0f489d164a83 = L.marker(
+                [12.8797, 121.774],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_358c6dba0be977c28c002c42766fbb53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b047a35dde90ef74fb9dee362e515e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e808efe8953f9113d799a809306940c = $(`<div id="html_6e808efe8953f9113d799a809306940c" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> martine.irog [at] spacegeneration [dot] org</div>`)[0];
+                popup_9b047a35dde90ef74fb9dee362e515e2.setContent(html_6e808efe8953f9113d799a809306940c);
+            
+        
+
+        marker_526e931ede8b64625bec0f489d164a83.bindPopup(popup_9b047a35dde90ef74fb9dee362e515e2)
+        ;
+
+        
+    
+    
+            marker_526e931ede8b64625bec0f489d164a83.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Phillipines
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_526e931ede8b64625bec0f489d164a83.setIcon(icon_358c6dba0be977c28c002c42766fbb53);
+            
+    
+            var marker_05efe7a0f9071c9b957329f13a2155c6 = L.marker(
+                [62.3875, 16.31],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c56106ece6d8e36b9569d12769238f6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3684fde8d62e72c5beab9cc7a43fa88b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_868d89207b026c2af726f85903cc5621 = $(`<div id="html_868d89207b026c2af726f85903cc5621" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> henrik.sandgren [at] darksky [dot] org</div>`)[0];
+                popup_3684fde8d62e72c5beab9cc7a43fa88b.setContent(html_868d89207b026c2af726f85903cc5621);
+            
+        
+
+        marker_05efe7a0f9071c9b957329f13a2155c6.bindPopup(popup_3684fde8d62e72c5beab9cc7a43fa88b)
+        ;
+
+        
+    
+    
+            marker_05efe7a0f9071c9b957329f13a2155c6.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Sweden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05efe7a0f9071c9b957329f13a2155c6.setIcon(icon_c56106ece6d8e36b9569d12769238f6b);
+            
+    
+            var marker_77f1ca260e832d42caf2a7ceb7df42cb = L.marker(
+                [63.990556, 12.307778],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_807147cccfc61e0a02bb2e744a7a5761 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e7458bb0ada387bf1e77384989c6219 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75d4257b60029212eb33bd104de4e2b3 = $(`<div id="html_75d4257b60029212eb33bd104de4e2b3" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> bernt.nilsen [at] blaatid [dot] no</div>`)[0];
+                popup_3e7458bb0ada387bf1e77384989c6219.setContent(html_75d4257b60029212eb33bd104de4e2b3);
+            
+        
+
+        marker_77f1ca260e832d42caf2a7ceb7df42cb.bindPopup(popup_3e7458bb0ada387bf1e77384989c6219)
+        ;
+
+        
+    
+    
+            marker_77f1ca260e832d42caf2a7ceb7df42cb.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Norway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77f1ca260e832d42caf2a7ceb7df42cb.setIcon(icon_807147cccfc61e0a02bb2e744a7a5761);
+            
+    
+            var marker_adf646bba807b5a5eefa6a05ce72c074 = L.marker(
+                [56.64, -6.55],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_c65a1a108a76fa31d06e33145eb648ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba097440c3878e6760c5cbfdc200904f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8716b1c5b68a956f3015f6a2fb987ad4 = $(`<div id="html_8716b1c5b68a956f3015f6a2fb987ad4" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> julie [at] collhotel [dot] com</div>`)[0];
+                popup_ba097440c3878e6760c5cbfdc200904f.setContent(html_8716b1c5b68a956f3015f6a2fb987ad4);
+            
+        
+
+        marker_adf646bba807b5a5eefa6a05ce72c074.bindPopup(popup_ba097440c3878e6760c5cbfdc200904f)
+        ;
+
+        
+    
+    
+            marker_adf646bba807b5a5eefa6a05ce72c074.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Isle of Coll (Scotland)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_adf646bba807b5a5eefa6a05ce72c074.setIcon(icon_c65a1a108a76fa31d06e33145eb648ec);
+            
+    
+            var marker_9ea8c9370d47d895c8c3414c98848d09 = L.marker(
+                [39.3289, -116.6312],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_63db571de72b209c531ac6819eab7744 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c062a96a5243961d5cc3fc17cb1916d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57dd2d2fb1d6fd6ffa4c91488c5ca716 = $(`<div id="html_57dd2d2fb1d6fd6ffa4c91488c5ca716" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://nevadadarkskies.org/ target=_blank>http://nevadadarkskies.org/</a> <br> <strong>Contact:</strong> <br> qgenheim [at] gmail [dot] com</div>`)[0];
+                popup_2c062a96a5243961d5cc3fc17cb1916d.setContent(html_57dd2d2fb1d6fd6ffa4c91488c5ca716);
+            
+        
+
+        marker_9ea8c9370d47d895c8c3414c98848d09.bindPopup(popup_2c062a96a5243961d5cc3fc17cb1916d)
+        ;
+
+        
+    
+    
+            marker_9ea8c9370d47d895c8c3414c98848d09.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Nevada
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ea8c9370d47d895c8c3414c98848d09.setIcon(icon_63db571de72b209c531ac6819eab7744);
+            
+    
+            var marker_49baf247a2a0ea9df6e0997f67e8dd72 = L.marker(
+                [47.798333, -123.618056],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_5987584b68ee888a0032c5e3d9985292 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81b312cb249845daac45e0cd4df9f435 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be46239585d76ab2d5c4002956f20092 = $(`<div id="html_be46239585d76ab2d5c4002956f20092" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=http://darkskyopwa.org/ target=_blank>http://darkskyopwa.org/</a> <br> <strong>Contact:</strong> <br> lkkahananui.teacher [at] gmail.com</div>`)[0];
+                popup_81b312cb249845daac45e0cd4df9f435.setContent(html_be46239585d76ab2d5c4002956f20092);
+            
+        
+
+        marker_49baf247a2a0ea9df6e0997f67e8dd72.bindPopup(popup_81b312cb249845daac45e0cd4df9f435)
+        ;
+
+        
+    
+    
+            marker_49baf247a2a0ea9df6e0997f67e8dd72.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Olympic Peninsula (Washington)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49baf247a2a0ea9df6e0997f67e8dd72.setIcon(icon_5987584b68ee888a0032c5e3d9985292);
+            
+    
+            var marker_e4e9e9fc46d1249223c109d864d90897 = L.marker(
+                [47.88, -120.64],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_2bdccc293cb985a848053e1bb2da4c72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_380d0ac3913ace2c7596ffc13926a6cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa21a9df022a8dffd924040bc44bb879 = $(`<div id="html_aa21a9df022a8dffd924040bc44bb879" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> gerry [at] livingourbestlives [dot] com</div>`)[0];
+                popup_380d0ac3913ace2c7596ffc13926a6cc.setContent(html_aa21a9df022a8dffd924040bc44bb879);
+            
+        
+
+        marker_e4e9e9fc46d1249223c109d864d90897.bindPopup(popup_380d0ac3913ace2c7596ffc13926a6cc)
+        ;
+
+        
+    
+    
+            marker_e4e9e9fc46d1249223c109d864d90897.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Chelan County (Washington)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e4e9e9fc46d1249223c109d864d90897.setIcon(icon_2bdccc293cb985a848053e1bb2da4c72);
+            
+    
+            var marker_7d38f971c8ec7456f606fd8245eb5c72 = L.marker(
+                [42.5, -92.0],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_9443ef92b6c2c094a70b35963ab29aa0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22c2f050550cb38ca2231ae456fc0fcb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_807f539e7ae48b6f9ca2891f683751f5 = $(`<div id="html_807f539e7ae48b6f9ca2891f683751f5" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> dvpeters [at] goacentek [dot] net</div>`)[0];
+                popup_22c2f050550cb38ca2231ae456fc0fcb.setContent(html_807f539e7ae48b6f9ca2891f683751f5);
+            
+        
+
+        marker_7d38f971c8ec7456f606fd8245eb5c72.bindPopup(popup_22c2f050550cb38ca2231ae456fc0fcb)
+        ;
+
+        
+    
+    
+            marker_7d38f971c8ec7456f606fd8245eb5c72.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Northeast Iowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7d38f971c8ec7456f606fd8245eb5c72.setIcon(icon_9443ef92b6c2c094a70b35963ab29aa0);
+            
+    
+            var marker_abf99a74279053aacff10611c2628334 = L.marker(
+                [47.4501, -100.4659],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_d066fefba967f601b2a0d959bb583aaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8aa2061fff1ef08cf4a8ffe71f826f2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0596ff8917a660d2c0257112ea92178f = $(`<div id="html_0596ff8917a660d2c0257112ea92178f" style="width: 100.0%; height: 100.0%;"><strong>Contact:</strong> <br> patrick.sommer [at] darksky [dot] org</div>`)[0];
+                popup_8aa2061fff1ef08cf4a8ffe71f826f2b.setContent(html_0596ff8917a660d2c0257112ea92178f);
+            
+        
+
+        marker_abf99a74279053aacff10611c2628334.bindPopup(popup_8aa2061fff1ef08cf4a8ffe71f826f2b)
+        ;
+
+        
+    
+    
+            marker_abf99a74279053aacff10611c2628334.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     North Dakota
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_abf99a74279053aacff10611c2628334.setIcon(icon_d066fefba967f601b2a0d959bb583aaf);
+            
+    
+            var marker_cf0bc7ffad25991c18573732ebd24ed2 = L.marker(
+                [44.0687, -72.6658],
+                {
+}
+            ).addTo(map_d2f989374a6d91cf2f40945463931400);
+        
+    
+            var icon_be176eb22f5e7037edbe44ed5fe11050 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7fb1d79e18b058dcac4626fd792bdff7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a91954c1781e0c75a0c84e313b371f2f = $(`<div id="html_a91954c1781e0c75a0c84e313b371f2f" style="width: 100.0%; height: 100.0%;"><strong>Website:</strong> <br> <a href=https://darkskyvt.org target=_blank>https://darkskyvt.org</a> <br> <strong>Contact:</strong> <br> info [at] darkskyvt [dot] org</div>`)[0];
+                popup_7fb1d79e18b058dcac4626fd792bdff7.setContent(html_a91954c1781e0c75a0c84e313b371f2f);
+            
+        
+
+        marker_cf0bc7ffad25991c18573732ebd24ed2.bindPopup(popup_7fb1d79e18b058dcac4626fd792bdff7)
+        ;
+
+        
+    
+    
+            marker_cf0bc7ffad25991c18573732ebd24ed2.bindTooltip(
+                `<div style="font-family: \u0027Verdana\u0027, sans-serif, monospace; font-size: 12px; color: black; font-weight: bold;">
+                     Vermont
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf0bc7ffad25991c18573732ebd24ed2.setIcon(icon_be176eb22f5e7037edbe44ed5fe11050);
+            
+</script>
+</html>
